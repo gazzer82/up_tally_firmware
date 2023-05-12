@@ -38,7 +38,7 @@ help() {
   echo
   echo "upload.sh [destination IP] [Path to .fw file]"
   echo
-  echo "Default destination IP is 'nerves.local'"
+  echo "Default destination IP is '192.168.10.25'"
   echo "Default firmware bundle is the first .fw file in '_build/\${MIX_TARGET}_\${MIX_ENV}/nerves/images'"
   echo
   echo "MIX_TARGET=$MIX_TARGET"
@@ -46,7 +46,7 @@ help() {
   exit 1
 }
 
-[ -n "$DESTINATION" ] || DESTINATION=nerves.local
+[ -n "$DESTINATION" ] || DESTINATION=192.168.10.25
 if [ -z "$FILENAME" ]; then
   [ -n "$MIX_TARGET" ] || MIX_TARGET=rpi0
   [ -n "$MIX_ENV" ] || MIX_ENV=dev
