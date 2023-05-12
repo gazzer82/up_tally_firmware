@@ -52,7 +52,7 @@ config :vintage_net,
     {"eth0",
      %{
        type: VintageNetEthernet,
-       ipv4: %{method: :dhcp}
+       ipv4: %{method: :static, address: "192.168.10.25", netmask: "255.255.255.0"}
      }},
     {"wlan0",
      %{
@@ -120,15 +120,6 @@ config :up_tally, UpTallyWeb.Endpoint,
   server: true,
   code_reloader: false
 
-# Configures the mailer
-#
-# By default it uses the "Local" adapter which stores the emails
-# locally. You can see the emails in your browser, at "/dev/mailbox".
-#
-# For production it's recommended to configure a different adapter
-# at the `config/runtime.exs`.
-config :up_tally, UpTally.Mailer, adapter: Swoosh.Adapters.Local
-
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.14.41",
@@ -163,9 +154,6 @@ config :up_tally, data_dest: "/root"
 
 config :up_tally, UpTallyWeb.Endpoint, cache_static_manifest: "priv/static/cache_manifest.json"
 
-# Disable swoosh api client as it is only required for production adapters.
-config :swoosh, :api_client, false
-
 config :up_tally_firmware,
   indicators: %{
     default: %{red: "red:indicator-1", green: "green:indicator-1", blue: "blue:indicator-1"},
@@ -173,7 +161,12 @@ config :up_tally_firmware,
     phycore: %{green: "phycore-green"}
   }
 
-config :up_tally, UpTally.Repo, database: "/root/#{Mix.env()}.sqlite3"
+config :up_tally,
+  ecto_repos: [UpTally.Repo]
+
+config :up_tally, UpTally.Repo,
+  database: "/root/#{Mix.env()}.sqlite3",
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "5")
 
 # Do not print debug messages in production
 # config :logger, level: :info
