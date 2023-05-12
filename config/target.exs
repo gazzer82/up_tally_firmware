@@ -53,21 +53,21 @@ config :vintage_net,
      %{
        type: VintageNetEthernet,
        ipv4: %{method: :static, address: "192.168.10.25", netmask: "255.255.255.0"}
-     }},
-    {"wlan0",
-     %{
-       type: VintageNetWiFi,
-       vintage_net_wifi: %{
-         networks: [
-           %{
-             key_mgmt: :wpa_psk,
-             ssid: "The Jeanne's",
-             psk: "3q9qiwKArYXE"
-           }
-         ]
-       },
-       ipv4: %{method: :dhcp}
      }}
+    # {"wlan0",
+    #  %{
+    #    type: VintageNetWiFi,
+    #    vintage_net_wifi: %{
+    #      networks: [
+    #        %{
+    #          key_mgmt: :wpa_psk,
+    #          ssid: "The Jeanne's",
+    #          psk: "3q9qiwKArYXE"
+    #        }
+    #      ]
+    #    },
+    #    ipv4: %{method: :dhcp}
+    #  }}
   ]
 
 config :mdns_lite,
