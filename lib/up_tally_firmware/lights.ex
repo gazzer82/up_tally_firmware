@@ -26,8 +26,6 @@ defmodule UpTallyFirmware.Lights do
   end
 
   def handle_info({:atem_status, status}, state) do
-    Logger.debug("Atem Status: #{Atom.to_string(status)}")
-
     case status do
       :connecting ->
         Delux.render(
@@ -74,8 +72,6 @@ defmodule UpTallyFirmware.Lights do
   end
 
   def handle_info({:tsl_status, status}, state) do
-    Logger.debug("TSL Status: #{Atom.to_string(status)}")
-
     case status do
       :connecting ->
         Delux.render(
@@ -122,7 +118,6 @@ defmodule UpTallyFirmware.Lights do
   end
 
   def handle_info(event, state) do
-    IO.inspect(event)
     {:noreply, state}
   end
 end
