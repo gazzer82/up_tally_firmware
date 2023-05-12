@@ -117,7 +117,7 @@ defmodule UpTallyFirmware.Lights do
     {:noreply, state}
   end
 
-  def handle_info(event, state) do
+  def handle_info(_event, state) do
     {:noreply, state}
   end
 end
