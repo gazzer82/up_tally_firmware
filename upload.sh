@@ -48,7 +48,7 @@ help() {
 
 [ -n "$DESTINATION" ] || DESTINATION=192.168.10.25
 if [ -z "$FILENAME" ]; then
-  [ -n "$MIX_TARGET" ] || MIX_TARGET=rpi0
+  [ -n "$MIX_TARGET" ] || MIX_TARGET=grisp2
   [ -n "$MIX_ENV" ] || MIX_ENV=dev
   FIRMWARE_PATH="./_build/${MIX_TARGET}_${MIX_ENV}/nerves/images"
   if [ ! -d "$FIRMWARE_PATH" ]; then
