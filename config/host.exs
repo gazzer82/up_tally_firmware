@@ -59,4 +59,5 @@ config :up_tally,
 
 config :up_tally, UpTally.Repo,
   database: "./#{Mix.env()}.sqlite3",
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "5")
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "5"),
+  log: false

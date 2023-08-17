@@ -57,7 +57,8 @@ defmodule UpTallyFirmware.MixProject do
       {:up_tally, path: "../up_tally", env: Mix.env()},
       {:delux, "~> 0.4.1"},
       {:phoenix_pubsub, "~> 2.1"},
-      {:circuits_gpio, "~> 1.1"}
+      {:circuits_gpio, "~> 1.1"},
+      {:circuits_uart, "~> 1.5"}
     ]
   end
 
