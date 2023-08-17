@@ -156,9 +156,12 @@ config :up_tally, UpTallyWeb.Endpoint, cache_static_manifest: "priv/static/cache
 
 config :up_tally_firmware,
   indicators: %{
-    default: %{red: "red:indicator-1", green: "green:indicator-1", blue: "blue:indicator-1"},
-    rgb2: %{red: "red:indicator-2", green: "green:indicator-2", blue: "blue:indicator-2"},
-    phycore: %{green: "phycore-green"}
+    default: %{
+      red: "red:indicator-1",
+      green: "green:indicator-1",
+      blue: "blue:indicator-1"
+    },
+    rgb2: %{red: "red:indicator-2", green: "green:indicator-2", blue: "blue:indicator-2"}
   }
 
 config :up_tally,
