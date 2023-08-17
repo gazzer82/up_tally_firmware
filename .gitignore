@@ -19,3 +19,7 @@ erl_crash.dump
 #Ignore firmware files
 *.fw
 *.gz
+
+
+#Ignore sqlite files
+*sqlite*
