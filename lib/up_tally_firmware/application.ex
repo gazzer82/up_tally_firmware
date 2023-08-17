@@ -18,9 +18,9 @@ defmodule UpTallyFirmware.Application do
         # Children for all targets
         # Starts a worker by calling: UpTallyFirmware.Worker.start_link(arg)
         # {UpTallyFirmware.Worker, arg},
-        {Delux,
-         indicators: Application.fetch_env!(:up_tally_firmware, :indicators)},
+        {Delux, indicators: Application.fetch_env!(:up_tally_firmware, :indicators)},
         UpTallyFirmware.Lights
+        # UpTallyFirmware.Serial
       ] ++ children(target())
 
     Supervisor.start_link(children, opts)
