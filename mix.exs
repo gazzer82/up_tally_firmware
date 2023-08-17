@@ -54,7 +54,7 @@ defmodule UpTallyFirmware.MixProject do
       {:nerves_system_osd32mp1, "~> 0.10", runtime: false, targets: :osd32mp1},
       {:nerves_system_x86_64, "~> 1.19", runtime: false, targets: :x86_64},
       {:nerves_system_grisp2, "~> 0.3", runtime: false, targets: :grisp2},
-      {:up_tally, path: "../up_tally", targets: @all_targets, env: Mix.env()},
+      {:up_tally, path: "../up_tally", env: Mix.env()},
       {:delux, "~> 0.4.1"},
       {:phoenix_pubsub, "~> 2.1"}
     ]
